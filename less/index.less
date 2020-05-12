@@ -3,6 +3,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import
+url('https://fonts.googleapis.com/css?family=Arimo|Montserrat&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -55,5 +57,153 @@ table {
 
 html, body {
     height: 100%;
+}
+
+
+
+@primary-color: rgb(84, 84, 194);
+@secondary-color: #6C6EA0;
+.indent(){
+	margin-left:10px;
+}
+.space(){
+	margin-bottom: 10px;
+}
+.soften(){
+	color: darkgray;
+	font-size: 13px;
+}
+// set two section to left and right
+.container{
+	display: flex;
+	@media(max-width: 500px){
+		flex-direction: column;
+	}
+	font-family: Arimo;
+	section{
+		margin: 20px;
+	}
+
+	.profile{
+		@media(max-width: 500px){
+			order: 2;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+		background-color: rgb(129, 189, 209);
+		color: white;
+		padding: 1%;
+		.pic-container{
+			img{
+				width: 150px;
+				.space();
+				border-radius: 50%;
+			}
+		}
+
+		h3{
+			font-size: 20px;
+			font-weight: bold;
+			.space();
+		}
+		
+		.contact{
+			div{
+				display: flex;
+				line-height: 1.5;
+
+				i{
+					width: 20px;
+				}
+				p{
+					margin-left: 5px;
+				}
+			}
+			.indent();
+			.space();
+		}
+	
+		.skills{
+			.indent();
+			@media(max-width: 500px){
+				order: -1;
+				width: 100%;
+			}
+			li{
+				line-height: 1.5;
+			}
+		}
+	}
+	
+	.experience{
+		@media(max-width: 500px){
+			order: 1;
+		}
+		line-height: 1.5;
+		h3{
+			color: @primary-color;
+			font-weight: bold;
+			font-size: 14px;
+			letter-spacing: 4px;
+		}
+
+		h4{
+			font-size: 18px;
+		}
+
+		.my-profile{
+			display: flex;
+			header{
+				margin-bottom: 35px;
+				h1{
+					font-size: 40px;
+					color: @primary-color;
+					line-height: normal;
+				}
+			
+				h2{
+					font-size: 30px;
+					color: @secondary-color;
+					line-height: normal;
+				}
+	
+				img{
+					width: 200px
+				}
+			}
+			.about-me{
+				border: #5F9EA0 solid 2px;
+				padding: 3px;
+				p {
+					font-size: 15px;
+					
+				}
+			}
+		}
+
+		.education{
+			line-height: 1.2;
+		}
+
+
+		li{
+			font-size: 16px;
+		}
+
+		div{
+			.space();
+		}
+
+		.about-me, .projects, .work{
+			.space();
+		}
+
+		.proj-info, .degree, .title{
+			.soften();
+		}
+	}
+	
 }
 
